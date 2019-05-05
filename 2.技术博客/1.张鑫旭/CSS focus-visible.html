@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            button{
+                background:lightgray;
+                border:none;
+                margin:100px;
+            }
+            .no_outline:focus:not(:focus-visible) {
+                outline: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <p>chrome鼠标点击的时候有outline,其他浏览器没有,但是为了无障碍访问,键盘需要聚焦不能把outline去掉</p>
+        <p>如果没有生效就打开chrome里面的chrome://flags,Experimental Web Platform features功能（chrome现在还没默认支持）</p>
+        <button>outline</button><br>
+        <button class="no_outline">outline</button>
+    
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
+

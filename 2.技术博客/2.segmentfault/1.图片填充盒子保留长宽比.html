@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object-fit</title>
+    <style>
+        .box{
+            width:600px;
+            height:400px;
+            border:2px solid #000;
+            
+        }
+
+        img{
+            object-fit:contain;
+            width:auto;
+            height:auto;
+            max-width: 100%;
+            max-height: 100%;
+            margin:0 auto;
+        }
+        /* 为了让盒子不突兀设置一个伪元素 */
+        .box::after{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            -webkit-transform:translate3d(0,0,0);
+            transform:translate3d(0,0,0);
+            z-index:1000;
+            width:100%;
+            height:100%;
+            border-radius: .1rem;
+            background:(85,85,85,.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="https://girlstyle-tw.imgix.net/wp-content/uploads/2018/03/1000-x-525%E6%9A%AE%E5%85%89%E4%B9%8B%E5%9F%8E%E6%A1%8C%E5%B8%83.jpg?auto=format&w=830" alt="">
+        <!-- 如果要放多张图片(富文本可以不要限制盒子的长度) -->
+        <!-- <img src="https://truth.bahamut.com.tw/s01/201309/c7ceffa647dbeb56d25bb33958d90dd8.JPG" alt="">
+        <img src="http://img3.cache.netease.com/lady/2011/1/10/201101101602231f4ce.jpg" alt=""> -->
+    </div>
+    <h4>tips:</h4>
+    <p>object-fit:fill | contain | cover | none | scale-down</p>
+    <p>
+        contain:被替换的内容将被缩放，以在填充元素的内容框时保持其宽高比。 整个对象在填充盒子的同时保留其长宽比，因此如果宽高比与框的宽高比不匹配，该对象将被添加“黑边”。
+        <br>
+        cover:被替换的内容在保持其宽高比的同时填充元素的整个内容框。如果对象的宽高比与内容框不相匹配，该对象将被剪裁以适应内容框。
+        <br>
+        fill:被替换的内容正好填充元素的内容框。整个对象将完全填充此框。如果对象的宽高比与内容框不相匹配，那么该对象将被拉伸以适应内容框。
+        <br>
+        none:被替换的内容将保持其原有的尺寸。
+        <br>
+        scale-down:内容的尺寸与 none 或 contain 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。
+    </p>
+</body>
+</html>
