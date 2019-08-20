@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript第一步概述</title>
+    <style>
+        p{
+            border:2px solid #000;
+            width:100px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>你好：小明</p>
+    <script>
+        const para=document.querySelector('p');
+        para.addEventListener('click',updateName);
+        function updateName() {
+            let name=prompt('输入一个人名');
+            para.textContent='你好：'+name;
+        }
+        //暂时性死区
+        // function bar(x=y,y=2){//报错，因为x=y在y=2声明之前，造成TDZ(暂时性死区),将两个调换就可以了
+        //     return [x,y];
+        // }
+        // bar();
+        
+        // 不允许重复声明
+        // let a=1;
+        // let a=1;//报错
+        // 地理位置api
+        // Geolocation.getCurrentPosition();
+
+        if ("geolocation" in navigator) {
+        /* 地理位置服务可用 */
+        console.log(1);
+        // geolocation.getCurrentPosition();
+        navigator.geolocation.getCurrentPosition(function(position) {
+            do_something(position.coords.latitude, position.coords.longitude);
+        });
+        } else {
+        /* 地理位置服务不可用 */
+        console.log(2);     
+        }
+
+        function do_something(){
+            
+        }
+    </script>
+</body>
+</html>

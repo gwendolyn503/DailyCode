@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪类</title>
+    <style>
+        a::after{
+            content:"("attr(href)")";
+        }
+        .box{
+            width:200px;
+            height:200px;
+            background:cornflowerblue;
+        }
+        .son{
+            width:1px;
+            height:100px;
+            background:darkgoldenrod;
+            margin:0 auto;
+            display:inline-block;
+        }
+        .box::before{
+            content:'';
+            width:10px;
+            height:100%;
+            background:red;
+            display:inline-block;
+        }
+        body{
+            counter-reset: section;
+            
+        }
+        h1{
+            counter-reset:bb;
+        }
+        h1::before{
+            counter-increment: section;
+            content:""counter(section)"、";
+        }
+        h2::before{
+            counter-increment: bb;
+            
+            content:""counter(section)"."counter(bb)"、"
+        }
+    </style>
+</head>
+<body>
+    <p>伪类是在子元素before和after出现的。</p>
+    <!-- 通过attr()调用当前元素的属性，比如将图片alt提示文字或者链接的href地址显示出来。 -->
+    <a href="https://www.cnblogs.com/starof/p/4459991.html">关于伪类的blog</a>
+    <div class="box">
+        <div class="son">
+
+        </div>
+    </div>
+<hr>
+    <!-- 实现序号功能 -->
+    <p>注意：一个div里面只能设置一个 counter-increment</p>
+    <h1>HTML tutorials</h1>
+    <h2>HTML Tutorial</h2>
+    <h2>XHTML Tutorial</h2>
+    <h2>CSS Tutorial</h2>
+
+    <h1>Scripting tutorials</h1>
+    <h2>JavaScript</h2>
+    <h2>VBScript</h2>
+
+    <h1>XML tutorials</h1>
+    <h2>XML</h2>
+    <h2>XSL</h2>
+</body>
+</html>

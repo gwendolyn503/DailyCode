@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜数字游戏</title>
+</head>
+<body>
+    <span class="tips">我刚才随机选定了一个100以内的自然数。看你能否在 10 次以内猜中它。每次我都会告诉你所猜的结果是高了还是低了。</span><br>
+    <span>请猜数：</span><input type="text" class="num"><button class="submit">确定</button>
+    <p class="last" style="display:none">上次猜的数：</p>
+    <p class="result" style="background: red;color:#fff;display:none;">你猜错了</p>
+    <p class="low" style="display:none;">刚才你猜低了</p>
+    <script> 
+        let trueNum=getRandomIntInclusive(0,100);
+        console.log(trueNum);
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        let num=document.querySelector('.num');
+        num.focus();//页面加载完自动聚焦
+        let submit=document.querySelector('.submit');
+        let last=document.querySelector('.last');
+        let result=document.querySelector('.result');
+        let low=document.querySelector('.low');
+        let body=document.querySelector('body');
+        let add=0;
+        function istrue(){
+            add+=1;
+            
+            console.log(trueNum,num.value);
+            last.style.display="block";
+            result.style.display="block";
+            low.style.display="block";
+            let value=num.value;
+            
+            if(value==''){
+                last.append(0+'   ');
+            }else{
+                last.append(value+'   ');
+            }
+            if(trueNum<num.value){
+                console.log('太大了');
+                result.innerHTML="你猜错了！";
+                low.innerHTML="刚才你猜高了";
+                result.style.background="red";
+            }else if(trueNum>num.value){
+                console.log('太小了');
+                low.innerHTML="刚才你猜低了";
+                result.innerHTML="你猜错了！";
+                result.style.background="red";
+            }else if(trueNum==num.value){
+                console.log('相等');
+                result.innerHTML="你猜对了";
+                result.style.background="green";
+                result.innerHTML="恭喜你猜对了";
+                low.style.display="none";
+                num.setAttribute("disabled","disabled");
+                submit.setAttribute("disabled","disabled");
+                var but=document.createElement('button');
+                but.innerHTML='重新开始游戏';
+                body.appendChild(but);
+                // body.appendChild('<button id="reset">重新开始游戏</button>');
+                // let reset=document.querySelector('#reset');
+                but.addEventListener('click',function(){
+                    trueNum=getRandomIntInclusive(0,100);
+                    console.log('出现',trueNum);
+                    submit.removeAttribute('disabled');
+                    num.removeAttribute('disabled');
+                    last.innerHTML="上次猜的数：";
+                   body.removeChild(but);
+                    last.style.display="none";
+                    result.style.display="none";
+                    low.style.display="none";
+                    add=0;
+                })
+            }
+            if(add>=10){
+                low.style.display="none";
+                num.setAttribute("disabled","disabled");
+                submit.setAttribute("disabled","disabled");
+                var but=document.createElement('button');
+                but.innerHTML='重新开始游戏';
+                body.appendChild(but);
+                result.innerHTML="游戏结束";
+                last.style.display="none";
+                low.style.display="none";
+                but.addEventListener('click',function(){
+                    trueNum=getRandomIntInclusive(0,100);
+                    console.log('出现',trueNum);
+                    submit.removeAttribute('disabled');
+                    num.removeAttribute('disabled');
+                    last.innerHTML="上次猜的数：";
+                    body.removeChild(but);
+                    last.style.display="none";
+                    result.style.display="none";
+                    low.style.display="none";
+                    add=0;
+                })
+            }
+            num.value='';
+        }
+
+        submit.addEventListener('click',istrue);
+        
+    </script>
+</body>
+</html>

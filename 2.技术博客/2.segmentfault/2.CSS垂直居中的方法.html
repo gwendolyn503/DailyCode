@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS垂直居中的方法</title>
+    <style>
+        .box{
+            width:150px;
+            height:150px;
+            border:8px groove gray;
+            text-align: center;
+        }
+        .son{
+            width: 50px;
+            height:50px;
+            background:pink;
+            display:inline-block;
+        } 
+        
+        /* 1.line-height 适用行多个元素*/
+        /* .box{
+            line-height: 180px; 
+        } */
+
+        /* 2.伪类&vertical-align  多行*/
+        .box::before{
+            content:'';
+            width:0;
+            height:100%;
+            display:inline-block;    
+            vertical-align: middle;
+            background:#f00;
+        }
+        .son{
+            vertical-align: middle;
+        }
+        .son1{
+            width:50px;
+            height:50px;
+            background:red;
+            vertical-align: middle;
+            display:inline-block;
+        }
+        /* 3.flexbox */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="son"></div>
+        <div class="son1"></div>
+    </div>
+</body>
+</html>

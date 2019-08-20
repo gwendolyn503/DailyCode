@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计数器</title>
+    <style>
+        body{
+            counter-reset: section;
+        }
+        h3::before{
+            counter-increment: section;
+            content:"section"counter(section)":";
+        }
+    </style>
+</head>
+<body>
+    <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Counters">出处</a>
+    <h3>Introduction</h3>
+    <h3>body</h3>
+    <h3>conclusion</h3>
+</body>
+</html>
