@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>场次设置</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="icon" href="https://yiqicommon.taokebon.com/h5/img/logo_fang.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://minipdd.mijian88.com/h5/css/common/common3.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css">
+    <style>
+        .tomo, .tomoplus {
+            height: 1.49925;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+        }
+        .modal-open .modal{
+            display:flex;
+            align-items: center;
+        }
+    </style>
+  </head>
+<!-- 18行 -->
+  <body class="tbWeeks">
+    <div class="container">
+      <!-- 今日场次 -->
+      <div class="row">
+          <div class="col-md-2">今日场次</div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次</div>
+          <div class="col-md-1">4</div>
+          <div class="col-md-1">（场）</div>
+          <div class="col-md-9"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+     <!-- 次日场次 -->
+      <div class="row tomo">
+          <div class="col-md-2">次日场次</div>
+          <button class="btn btn-primary btntomo" data-target="#myModal">编辑</button>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次</div>
+          <div class="col-md-1">4</div>
+          <div class="col-md-1">（场）</div>
+          <div class="col-md-9"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <!-- 第三日场次及之后 -->
+      <div class="row tomoplus">
+          <div class="col-md-2">第三日场次及之后</div>
+          <button class="btn btn-primary">编辑</button>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次</div>
+          <div class="col-md-1">4</div>
+          <div class="col-md-1">（场）</div>
+          <div class="col-md-9"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-1">场次一</div>
+          <div class="col-md-1">0：00:00</div>
+          <div class="col-md-1">————</div>
+          <div class="col-md-1">09:59:59</div>
+          <div class="col-md-8"></div>
+      </div>
+      <!-- 弹窗 -->
+      <!-- <div class="modal fade"> 
+          <div class="modal-dialog">
+              <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                  <p>One fine body…</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+              </div>-->
+             <!-- </div> /.modal-content -->
+          <!--</div> /.modal-dialog -->
+     <!-- </div> /.modal -->
+    <!-- <form>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2"><label for="select1" >选择场次：</label></div>
+                <div class="col-md-9">
+                    <select class="form-control" id="select1">
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+                <div class="col-md-1">（场）</div>
+            </div>
+            
+            
+        </div>
+        <div class="row chance1">
+            <div class="col-md-2"><label for="select2" >场次一：</label></div>
+            <div class="col-md-2">
+                <span class="span2">0</span>：00：00 ———— 
+            </div>
+            <div class="col-md-2">
+                <select class="form-control" id="select2" >
+                    
+                </select>
+            </div>
+            <div class="col-md-2">
+                 ：59：59
+            </div>
+        </div>
+        <div class="row chance2">
+            <div class="col-md-2"><label for="select3" >场次二：</label></div>
+            <div class="col-md-2">
+                    <span class="span3">0</span>：00：00 ———— 
+            </div>
+            <div class="col-md-2">
+                <select class="form-control" id="select3" >
+                    
+                </select>
+            </div>
+            <div class="col-md-2">
+                    ：59：59
+            </div>
+        </div>
+        <div class="row chance3">
+            <div class="col-md-2"><label for="select4" >场次三：</label></div>
+            <div class="col-md-2">
+                <span class="span4">0</span>：00：00 ———— 
+            </div>
+            <div class="col-md-2">
+                <select class="form-control" id="select4" >
+                    
+                </select>
+            </div>
+            <div class="col-md-2">
+                    ：59：59
+            </div>
+        </div>
+        <div class="row chance4">
+            <div class="col-md-2"><label for="select5" >场次四：</label></div>
+            <div class="col-md-2">
+                <span class="span5">0</span>：00：00 ———— 
+            </div>
+            <div class="col-md-2">
+                <select class="form-control" id="select5" >
+                    
+                </select>
+            </div>
+            <div class="col-md-2">
+                    ：59：59
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-default submit_tomo">Submit</button>
+            </div>
+
+        </div>
+    </form> -->
+
+    </div>
+
+  </body>
+  <script src="https://minipdd.mijian88.com/h5/js/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+  <script>
+    // 点击次日
+    $('.btntomo').on('click',function(){
+        BootstrapDialog.show({
+            title:'编辑',
+            message: "<form><div class='form-group'><div class='row'><div class='col-md-3'><label for='select1' >选择场次：</label></div><div class='col-md-5'><select class='form-control' id='select1'><option>4</option><option>5</option><option>6</option></select></div><div class='col-md-1'>（场）</div></div></div><div class='row chance1'><div class='col-md-2'><label for='select2' >场次一：</label></div><div class='col-md-4'><span class='span2'>0</span>：00：00 ———— </div><div class='col-md-2'><select class='form-control' id='select2' ></select></div><div class='col-md-2'>：59：59</div></div><div class='row chance2'><div class='col-md-2'><label for='select3' >场次二：</label></div><div class='col-md-4'><span class='span3'>0</span>：00：00 ———— </div><div class='col-md-2'><select class='form-control' id='select3' ></select></div><div class='col-md-2'>：59：59</div></div><div class='row chance3'><div class='col-md-2'><label for='select4' >场次三：</label></div><div class='col-md-4'><span class='span4'>0</span>：00：00 ———— </div><div class='col-md-2'><select class='form-control' id='select4' ></select></div><div class='col-md-2'>：59：59</div></div><div class='row chance4'><div class='col-md-2'><label for='select5' >场次四：</label></div><div class='col-md-4'><span class='span5'>0</span>：00：00 ———— </div><div class='col-md-2'><select class='form-control' id='select5' ></select></div><div class='col-md-2'>：59：59</div></div><div class='row'><div class='col-md-2'><button type='submit' class='btn btn-primary submit_tomo'>Submit</button></div></div></form>"
+          
+        });
+   
+        setTimeout(function(){
+            // 初始化
+            $('.chance5,.chance6').remove();
+            $('#select2').empty();
+            $('#select3').empty();
+            $('#select4').empty();
+            $('#select5').empty();
+            $('#select6').empty();
+            $('#select7').empty();
+            for(i=1;i<21;i++){
+                $('#select2').append("<option>"+(Number(i))+"</option>");
+            }
+            $("#select2").val("20");
+            for(i=20;i<23;i++){
+                $('#select3').append("<option>"+(Number(i)+1)+"</option>"); 
+                $('#select4').append("<option>"+(Number(i)+2)+"</option>"); 
+                $('#select5').append("<option>"+(Number(i)+3)+"</option>"); 
+                $('#select6').append("<option>"+(Number(i)+4)+"</option>"); 
+                $('#select7').append("<option>"+(Number(i)+5)+"</option>"); 
+            }
+            $('.span3').text(20+1);
+            $('.span4').text(20+2);
+            $('.span5').text(20+3);
+            $('.span6').text(20+4);
+            $('.span7').text(20+5);
+            // 选择场次
+            $('#select1').change(function(){
+            let session1=$(this).children('option:selected').val();
+                if(session1==4){
+                    $('.chance5,.chance6').remove();
+                    $('#select2').empty();
+                    $('#select3').empty();
+                    $('#select4').empty();
+                    $('#select5').empty();
+                    $('#select6').empty();
+                    $('#select7').empty();
+                    for(i=1;i<21;i++){
+                        $('#select2').append("<option>"+(Number(i))+"</option>");
+                    }
+                    $("#select2").val("20");
+                    for(i=20;i<23;i++){
+                        $('#select3').append("<option>"+(Number(i)+1)+"</option>"); 
+                        $('#select4').append("<option>"+(Number(i)+2)+"</option>"); 
+                        $('#select5').append("<option>"+(Number(i)+3)+"</option>"); 
+                        $('#select6').append("<option>"+(Number(i)+4)+"</option>"); 
+                        $('#select7').append("<option>"+(Number(i)+5)+"</option>"); 
+                    }
+                    $('.span3').text(20+1);
+                    $('.span4').text(20+2);
+                    $('.span5').text(20+3);
+                    $('.span6').text(20+4);
+                    $('.span7').text(20+5);
+
+                    // 判断是否超出23
+                        // 判断是否有超出的选项
+                    $("#select4 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                    $("#select5 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                    $("#select6 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                    $("#select7 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                }else if(session1==5){
+                    $('.chance5,.chance6').remove();
+                    $('.chance4').after('<div class="row chance5"><div class="col-md-2"><label for="select6" >场次五：</label></div><div class="col-md-4"><span class="span6">0</span>：00：00 ———— </div><div class="col-md-2"><select class="form-control" id="select6" ></select></div><div class="col-md-2"> ：59：59</div></div>');
+                    $()
+                    $('#select2').empty();
+                    $('#select3').empty();
+                    $('#select4').empty();
+                    $('#select5').empty();
+                    $('#select6').empty();
+                    $('#select7').empty();
+                    for(i=1;i<20;i++){
+                        $('#select2').append("<option>"+(Number(i))+"</option>");
+                    }
+                    $("#select2").val("19");
+                    for(i=19;i<23;i++){
+                        $('#select3').append("<option>"+(Number(i)+1)+"</option>"); 
+                        $('#select4').append("<option>"+(Number(i)+2)+"</option>"); 
+                        $('#select5').append("<option>"+(Number(i)+3)+"</option>"); 
+                        $('#select6').append("<option>"+(Number(i)+4)+"</option>"); 
+                        $('#select7').append("<option>"+(Number(i)+5)+"</option>"); 
+                    }
+                    $('.span3').text(19+1);
+                    $('.span4').text(19+2);
+                    $('.span5').text(19+3);
+                    $('.span6').text(19+4);
+                    $('.span7').text(19+5);
+
+                        // 判断是否有超出的选项
+                    $("#select4 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                    $("#select5 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                    $("#select6 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                    $("#select7 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+            }else if(session1==6){
+                    $('.chance5,.chance6').remove();
+                    $('.chance4').after('<div class="row chance5"><div class="col-md-2"><label for="select6" >场次五：</label></div><div class="col-md-4"><span class="span6">0</span>：00：00 ———— </div><div class="col-md-2"><select class="form-control" id="select6" ></select></div><div class="col-md-2"> ：59：59</div></div><div class="row chance6"><div class="col-md-2"><label for="select7" >场次六：</label></div><div class="col-md-4"><span class="span7">0</span>：00：00 ———— </div><div class="col-md-2"><select class="form-control" id="select7" ></select></div><div class="col-md-2"> ：59：59</div></div>');
+                    $('#select2').empty();
+                    $('#select3').empty();
+                    $('#select4').empty();
+                    $('#select5').empty();
+                    $('#select6').empty();
+                    $('#select7').empty();
+                    for(i=1;i<19;i++){
+                        $('#select2').append("<option>"+(Number(i))+"</option>");
+                    }
+                    $("#select2").val("18");
+                    for(i=18;i<23;i++){
+                        $('#select3').append("<option>"+(Number(i)+1)+"</option>"); 
+                        $('#select4').append("<option>"+(Number(i)+2)+"</option>"); 
+                        $('#select5').append("<option>"+(Number(i)+3)+"</option>"); 
+                        $('#select6').append("<option>"+(Number(i)+4)+"</option>"); 
+                        $('#select7').append("<option>"+(Number(i)+5)+"</option>"); 
+                    }
+                    $('.span3').text(18+1);
+                    $('.span4').text(18+2);
+                    $('.span5').text(18+3);
+                    $('.span6').text(18+4);
+                    $('.span7').text(18+5);
+
+                        // 判断是否有超出的选项
+                    $("#select4 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                    $("#select5 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                    $("#select6 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+                    $("#select7 option").each(function() {  
+                        var op = $(this).text();
+                        console.log(op);
+                        if(op>23){
+                            $(this).remove();
+                        }
+                    });
+            }
+            })
+            // 判断select
+            // 场次一
+            $('#select2').change(function(){ 
+                let p1=$(this).children('option:selected').val();//这就是selected的值 
+                $('#select3').empty();
+                $('#select4').empty();
+                $('#select5').empty();
+                $('#select6').empty();
+                $('#select7').empty();
+
+                for(i=p1;i<24;i++){
+                $('#select3').append("<option>"+(Number(i)+1)+"</option>"); 
+                $('#select4').append("<option>"+(Number(i)+2)+"</option>"); 
+                $('#select5').append("<option>"+(Number(i)+3)+"</option>"); 
+                $('#select6').append("<option>"+(Number(i)+4)+"</option>"); 
+                $('#select7').append("<option>"+(Number(i)+5)+"</option>"); 
+                }
+                $('.span3').text(Number(p1)+1);
+                $('.span4').text(Number(p1)+2);
+                $('.span5').text(Number(p1)+3);
+                $('.span6').text(Number(p1)+4);
+                $('.span7').text(Number(p1)+5);
+                check_over();
+            }) 
+            // 场次二
+            $('#select3').change(function(){ 
+                let p2=$(this).children('option:selected').val();//这就是selected的值 
+                $('#select4').empty();
+                $('#select5').empty();
+                $('#select6').empty();
+                $('#select7').empty();
+                for(i=p2;i<24;i++){
+                $('#select4').append("<option>"+(Number(i)+1)+"</option>"); 
+                $('#select5').append("<option>"+(Number(i)+2)+"</option>"); 
+                $('#select6').append("<option>"+(Number(i)+3)+"</option>"); 
+                $('#select7').append("<option>"+(Number(i)+4)+"</option>"); 
+                }
+                $('.span4').text(Number(p2)+1);
+                $('.span5').text(Number(p2)+2);
+                $('.span6').text(Number(p2)+3);
+                $('.span7').text(Number(p2)+4);
+                check_over();
+            })
+        // 场次三
+            $('#select4').change(function(){ 
+                let p3=$(this).children('option:selected').val();//这就是selected的值 
+                $('#select5').empty();
+                $('#select6').empty();
+                $('#select7').empty();
+                for(i=p3;i<24;i++){
+                $('#select5').append("<option>"+(Number(i)+1)+"</option>"); 
+                $('#select6').append("<option>"+(Number(i)+2)+"</option>"); 
+                $('#select7').append("<option>"+(Number(i)+3)+"</option>");
+                }
+
+                $('.span5').text(Number(p3)+1);
+                $('.span6').text(Number(p3)+2);
+                $('.span7').text(Number(p3)+3);
+                check_over();
+            })
+        // 场次四
+            $('#select5').change(function(){ 
+                let p4=$(this).children('option:selected').val();//这就是selected的值 
+                $('#select6').empty();
+                $('#select7').empty();
+
+                for(i=p4;i<24;i++){
+                $('#select6').append("<option>"+(Number(i)+1)+"</option>"); 
+                $('#select7').append("<option>"+(Number(i)+2)+"</option>"); 
+                }
+                $('.span6').text(Number(p4)+1);
+                $('.span7').text(Number(p4)+2);
+                check_over();
+            })
+
+        // 场次五
+            $('#select6').change(function(){ 
+                let p5=$(this).children('option:selected').val();//这就是selected的值 
+                $('#select7').empty();
+                for(i=p5;i<24;i++){ 
+                $('#select7').append("<option>"+(Number(i)+1)+"</option>"); 
+                }
+                $('.span7').text(Number(p5)+1);
+                check_over();
+            })
+
+            // 判断是否有超出的选项
+            function check_over(){
+                    // 判断是否有超出的选项
+                $("#select4 option").each(function() {  
+                    var op = $(this).text();
+                    console.log(op);
+                    if(op>23){
+                        $(this).remove();
+                    }
+                });
+                $("#select5 option").each(function() {  
+                    var op = $(this).text();
+                    console.log(op);
+                    if(op>23){
+                        $(this).remove();
+                    }
+                });
+                $("#select6 option").each(function() {  
+                    var op = $(this).text();
+                    console.log(op);
+                    if(op>23){
+                        $(this).remove();
+                    }
+                });
+                $("#select7 option").each(function() {  
+                    var op = $(this).text();
+                    console.log(op);
+                    if(op>23){
+                        $(this).remove();
+                    }
+                });
+            }
+            check_over();
+        },500)    
+    })
+
+  </script>
+</html>
