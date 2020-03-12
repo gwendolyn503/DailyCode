@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="https://yiqicommon.taokebon.com/h5/img/logo_fang.png" type="image/x-icon">
+    <title>proxy</title>
+</head>
+<body>
+    <span id="container">111</span>
+    <button id="button">加一</button>
+</body>
+<script>
+    // 1.Object.defineProperty
+    // document.getElementById('button').addEventListener("click", function(){
+    //     var container = document.getElementById("container");
+    //     container.innerHTML = Number(container.innerHTML) + 1;
+    // });
+
+    // 2.proxy var proxy=new Proxy(target,handler)
+    // var proxy=new Proxy({},{
+    //     get:function(obj,prop){
+    //         console.log('get');
+    //         return obj[prop];
+    //     },
+    //     set:function(obj,prop,value){
+    //         console.log('set');
+    //         obj[prop]=value;
+    //     }
+    // })
+
+
+    var obj = new Proxy({}, {
+    get: function (target, key, receiver) {
+        console.log(`getting ${key}!`);
+        return Reflect.get(target, key, receiver);
+    },
+    set: function (target, key, value, receiver) {
+        console.log(`setting ${key}!`);
+        return Reflect.set(target, key, value, receiver);
+    }
+    });
+    obj.many=36;
+    console.log(++obj.many);
+
+    var target={
+        apple:12
+    };
+    var handler={
+        get:function(target,key,receiver){
+            return Reflect.get(target,key,receiver)
+        },
+        set:function(target,key,value,receiver){
+            return Reflect.set(target,key,value,receiver)
+        }
+    }
+    var proxy=new Proxy(target,handler);
+    proxy.block='i love es6!';
+    console.log(proxy.block);
+    
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!--
+ * @Author: wu_lingshan
+ * @Date: 2020-03-12 15:47:24
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" :title="hope">
+        <div class="content">
+              app
+        </div>
+      
+        <div class="page1" v-if="show">
+            {{message}}
+        </div>
+        <ul>
+            <li class="coach" v-for="word in list">
+                {{word.text}}
+            </li>
+        </ul>
+        <button @click="reverseMes">反转消息</button>
+        <input type="text" v-model="message">
+    </div>
+    <script>
+        var app=new Vue({
+            el:'#app',
+            data:{
+                message:'Hello who you are',
+                hope:'this page from'+new Date().toLocaleString(),
+                show:true,
+                list:[
+                    {text:'if i am a bird'},
+                    {text:'i need to sing with'},
+                    {text:'in the montherLand'}
+                ]
+            },
+            methods: {
+                reverseMes:function(){
+                    this.message=this.message.split('').reverse().join('')
+                }
+            },
+        })
+    </script>
+</body>
+</html>

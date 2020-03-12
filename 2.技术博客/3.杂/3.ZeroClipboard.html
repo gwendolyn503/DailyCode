@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ZeroClipboard</title>
+</head>
+<body>
+    <input type="text" name="" id="J_TextIn" value="Copy Test.">
+    <input type="button" value="Copy" id="J_DoCopy">
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.3.0/ZeroClipboard.min.js"></script>
+    
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        (function(){
+            var btn = document.getElementById('J_DoCopy'),
+                text = document.getElementById('J_TextIn'),
+                zc = new ZeroClipboard(btn);
+            zc.on('beforecopy', function(e){
+                zc.setText(text.value);
+            });
+        })();
+    </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="250">
+        您的浏览器不支持Canvas
+    </canvas>
+</body>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(200, 200);
+    ctx.lineTo(100, 200);
+
+/*
+ *
+2.2 线型
+    CanvasRenderingContext2D.lineWidth：指定线条的宽度，默认为1.0。
+    CanvasRenderingContext2D.lineCap：指定线条末端的样式，有三个可能的值：butt（默认值，末端为矩形）、round（末端为圆形）、square（末端为突出的矩形，矩形宽度不变，高度为线条宽度的一半）。
+    CanvasRenderingContext2D.lineJoin：指定线段交点的样式，有三个可能的值：round（交点为扇形）、bevel（交点为三角形底边）、miter（默认值，交点为菱形)。
+    CanvasRenderingContext2D.miterLimit：指定交点菱形的长度，默认为10。该属性只在lineJoin属性的值等于miter时有效。
+    CanvasRenderingContext2D.getLineDash()：返回一个数组，表示虚线里面线段和间距的长度。
+    CanvasRenderingContext2D.setLineDash()：数组，用于指定虚线里面线段和间距的长度。
+ *
+ */
+
+    // ctx.lineWidth = 3;  
+    // ctx.lineCap = 'round';
+    // ctx.lineJoin = 'round';
+    // ctx.setLineDash([15, 5]);
+    // ctx.stroke();
+
+    ctx.rect();
+</script>
+</html>
